@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "airtable": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "airtable-mcp-server"
+      ],
+      "env": {
+        "AIRTABLE_API_KEY": "${AIRTABLE_API_KEY}"
+      }
+    },
+    "beta-gouv": {
+      "type": "http",
+      "url": "https://doc.incubateur.net/communaute/~gitbook/mcp"
+    },
+    "google-workspace": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "workspace-mcp",
+        "--tools",
+        "drive",
+        "docs",
+        "sheets",
+        "slides"
+      ],
+      "env": {
+        "GOOGLE_OAUTH_CLIENT_ID": "${GOOGLE_OAUTH_CLIENT_ID}",
+        "GOOGLE_OAUTH_CLIENT_SECRET": "${GOOGLE_OAUTH_CLIENT_SECRET}",
+        "OAUTHLIB_INSECURE_TRANSPORT": "1"
+      }
+    },
+    "lemlist": {
+      "type": "http",
+      "url": "https://app.lemlist.com/mcp",
+      "headers": {
+        "X-API-Key": "${LEMLIST_API_KEY}"
+      }
+    },
+    "dropcontact": {
+      "type": "http",
+      "url": "https://mcp.dropcontact.com/mcp/",
+      "headers": {
+        "X-Access-Token": "${DROPCONTACT_ACCESS_TOKEN}"
+      }
+    },
+    "slite": {
+      "type": "http",
+      "url": "https://api.slite.com/mcp"
+    },
+    "linkup": {
+      "type": "http",
+      "url": "https://mcp.linkup.so/mcp?apiKey=${LINKUP_API_KEY}"
+    }
+  }
+}

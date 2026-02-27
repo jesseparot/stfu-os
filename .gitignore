@@ -1,0 +1,20 @@
+# Local workspace (all active work)
+_workspace/
+
+# Environment secrets
+.env
+
+# OS files
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Binary content (should never be in repo)
+*.pdf
+*.pptx
+*.docx
+*.xlsx
+
+# Claude Code local settings
+.claude/settings.local.json
