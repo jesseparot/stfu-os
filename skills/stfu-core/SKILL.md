@@ -97,6 +97,7 @@ Quand un skill a besoin de methodologie ou de donnees de reference, interroger l
 - Referencer les projets similaires passes dans Airtable
 - Verifier `glossary.md` pour l'orthographe des noms propres
 - Inclure des resultats quantifies quand c'est possible (euros, %, utilisateurs, temps economise)
+- Structurer toute analyse en categories MECE : les sections/categories ne se chevauchent pas (pas de double compte) et couvrent l'ensemble du sujet (pas de trou). Auto-check avant livraison : un element peut-il tomber dans deux categories ? Manque-t-il une dimension evidente ?
 - Garder les resumes executifs sous 3 paragraphes
 
 ## Direction architecturale

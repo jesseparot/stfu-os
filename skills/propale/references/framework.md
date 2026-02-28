@@ -26,6 +26,12 @@ Guide détaillé pour la rédaction de propositions commerciales. Chaque section
 - Sources : missions passées Airtable, benchmarks sectoriels, données client
 - Si pas de chiffre dispo : "A quantifier" (pas de chiffre inventé)
 
+### MECE
+- Chaque ensemble de categories (enjeux, convictions, phases, recommandations) est mutuellement exclusif et collectivement exhaustif.
+- S'applique concretement aux enjeux (section 2), aux convictions (section 4), aux phases (section 5).
+- Test : un element doit tomber dans exactement une categorie. Si chevauchement ou trou, redecouper.
+- Complement du Pyramid Principle : MECE valide la structure, Pyramid ordonne la presentation.
+
 ---
 
 ## Sections détaillées
