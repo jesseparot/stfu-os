@@ -6,7 +6,7 @@ Ce document est la **source de verite** pour les conventions de nommage et de st
 
 ## 1. Structure des dossiers
 
-Le workspace separe le **tool layer** (tracked dans git) du **content layer** (local dans `_workspace/`, gitignored).
+Le workspace separe le **tool layer** (tracked dans git) du **content layer** (dans le workspace local, gitignored).
 
 ### Tracked (git) — tool layer
 
@@ -19,7 +19,7 @@ stfu-os/
 │
 ├── .mcp.json                    # Config MCP (secrets via ${VAR})
 ├── .env.example                 # Template des secrets
-├── .gitignore                   # Exclut _workspace/, .env, binaires
+├── .gitignore                   # Exclut content layer, .env, binaires
 │
 ├── tuto/                        # Guides partenaires
 │   └── secrets-setup.md
@@ -30,32 +30,31 @@ stfu-os/
 └── glossary.md                  # Noms propres
 ```
 
-### `_workspace/` (gitignored) — content layer
+### Content layer (gitignored)
 
 **Core (tout coach)** :
 
 ```
-_workspace/
-├── projects/           # Projets actifs
-│   └── {client}-{sujet}/
-│       ├── README.md   # Manifest (seul fichier requis)
-│       └── _scratch/   # Docs ephemeres, reflexion locale (reco)
-├── _inbox/             # Zone de depot par defaut
-└── _archive/           # Projets et leads termines
+projects/               # Projets actifs
+│ └── {client}-{sujet}/
+│     ├── README.md     # Manifest (seul fichier requis)
+│     └── _scratch/     # Docs ephemeres, reflexion locale (reco)
+_inbox/                 # Zone de depot par defaut
+_archive/               # Projets et leads termines
 ```
 
 **Optionnel (selon le coach/workflow)** :
 
 ```
-├── sales/              # Si suivi local d'AO (sinon tout dans Slite/Salesforce)
-│   └── appels-d-offres/
-├── internal/           # Docs de reflexion strategie personnels
-├── templates/          # En cours de migration vers Slite
-├── methodologies/      # En cours de migration vers Slite
-└── _pipeline-artefacts/  # Intermediaires de workflows automatises
+sales/                  # Si suivi local d'AO (sinon tout dans Slite/Salesforce)
+└── appels-d-offres/
+internal/               # Docs de reflexion strategie personnels
+templates/              # En cours de migration vers Slite
+methodologies/          # En cours de migration vers Slite
+_pipeline-artefacts/    # Intermediaires de workflows automatises
 ```
 
-Le contenu dans `_workspace/` migre progressivement vers les outils cloud (Slite, Drive). L'objectif : zero contenu local a terme.
+Le contenu local migre progressivement vers les outils cloud (Slite, Drive). L'objectif : zero contenu local a terme.
 
 ---
 
@@ -106,12 +105,12 @@ a l'interieur -- c'est du brouillon jetable par definition.
 
 ### 3.1 Principe
 
-Chaque projet a un **dossier local** dans `_workspace/projects/` avec un manifest README qui pointe vers les espaces cloud. Le contenu (notes, CRs, livrables) vit dans Slite, Drive, etc. Pas de duplication. Pas de structure tracked dans git pour les projets.
+Chaque projet a un **dossier local** dans `projects/` avec un manifest README qui pointe vers les espaces cloud. Le contenu (notes, CRs, livrables) vit dans Slite, Drive, etc. Pas de duplication. Pas de structure tracked dans git pour les projets.
 
-### 3.2 Dossier local (_workspace/projects/)
+### 3.2 Dossier local (projects/)
 
 ```
-_workspace/projects/{client}-{sujet}/
+projects/{client}-{sujet}/
 ├── README.md          # Manifest projet — seul fichier requis
 └── ...                # Fichiers de travail locaux
 ```
@@ -145,9 +144,9 @@ Le README.md sert de **carte** pour que Claude et les humains sachent ou trouver
 **Pourquoi local** : iterer avec Claude Code est plus rapide que modifier Slite ou Drive directement. Le fichier local permet des allers-retours rapides avant un commit cloud.
 
 **Regles** :
-- Les fichiers dans `_workspace/` suivent les conventions de nommage standard (section 2)
+- Les fichiers locaux suivent les conventions de nommage standard (section 2)
 - Une fois publie dans l'outil cloud, le fichier local peut etre supprime
-- `_workspace/` ne doit jamais devenir un stockage permanent — migrer vers Slite/Drive
+- Le workspace ne doit jamais devenir un stockage permanent — migrer vers Slite/Drive
 
 ### 3.3 Structure cloud — Slite
 
@@ -171,7 +170,7 @@ Le skill `/debrief` publie directement dans cette structure : il identifie la no
 ### 3.4 Workflow de setup projet
 
 Lancer `/project-init`. Le skill cree automatiquement :
-1. Le dossier local + manifest dans `_workspace/projects/`
+1. Le dossier local + manifest dans `projects/`
 2. La note parent Slite + sous-note "Comptes rendus"
 3. Le dossier Drive (dans le dossier client existant ou nouveau)
 4. Les liens dans le manifest
@@ -181,7 +180,7 @@ Lancer `/project-init`. Le skill cree automatiquement :
 ## 4. Structure d'un lead
 
 ```
-_workspace/sales/leads/{entreprise}-{contact}-{sujet}/
+sales/leads/{entreprise}-{contact}-{sujet}/
 │
 ├── README.md                    # Fiche lead
 │   # Contexte, besoin identifie
@@ -200,21 +199,21 @@ _workspace/sales/leads/{entreprise}-{contact}-{sujet}/
 
 ```
 1. RDV de vente organise
-   → Creer _workspace/sales/leads/{entreprise}-{contact}-{sujet}/
+   → Creer sales/leads/{entreprise}-{contact}-{sujet}/
    → Remplir README.md (fiche lead)
 
 2. Mission signee
    → Lancer /project-init (cree dossier local, Slite, Drive, manifest)
-   → Deplacer lead vers _workspace/_archive/ ou supprimer
+   → Deplacer lead vers _archive/ ou supprimer
 
 3. Mission en cours
    → CRs publies dans Slite (via /debrief ou manuellement)
-   → Iteration locale dans _workspace/ si besoin, puis commit cloud
+   → Iteration locale si besoin, puis commit cloud
    → Livrables dans Drive ou outil client
 
 4. Mission terminee
    → Capitaliser dans Airtable (via /mission-airtable)
-   → Deplacer _workspace/projects/{name}/ vers _workspace/_archive/
+   → Deplacer projects/{name}/ vers _archive/
    → Archiver la note Slite (si fonctionnalite dispo)
 ```
 
@@ -224,11 +223,11 @@ _workspace/sales/leads/{entreprise}-{contact}-{sujet}/
 
 ### 6.1 Principe
 
-Le dossier `_workspace/_inbox/` est la zone de depot par defaut. Les fichiers peuvent etre organises automatiquement via le skill `organize-file`.
+Le dossier `_inbox/` est la zone de depot par defaut. Les fichiers peuvent etre organises automatiquement via le skill `organize-file`.
 
 ### 6.2 Comportement
 
-1. Fichier depose dans `_workspace/_inbox/`
+1. Fichier depose dans `_inbox/`
 2. Skill `organize-file` analyse :
    - Type de fichier (transcript, note, CR, proposal, etc.)
    - Client/lead associe (si detectable)
@@ -242,15 +241,15 @@ Le dossier `_workspace/_inbox/` est la zone de depot par defaut. Les fichiers pe
 ### 6.3 Cas ambigus
 
 Si le skill ne peut pas determiner la destination :
-- Le fichier reste dans `_workspace/_inbox/`
+- Le fichier reste dans `_inbox/`
 - Un tag `[NEEDS-REVIEW]` est ajoute
-- Une entree est ajoutee dans `_workspace/_inbox/_pending.md`
+- Une entree est ajoutee dans `_inbox/_pending.md`
 
 ---
 
 ## 7. Style d'ecriture
 
-Voir `.claude/skills/stfu-writing/SKILL.md` pour les regles detaillees :
+Voir `skills/stfu-writing/SKILL.md` pour les regles detaillees :
 - Pas de title case
 - Pas de em-dash
 - Mots simples, pas de jargon inutile

@@ -36,7 +36,7 @@ Ensuite, ajouter le sourcing automatique dans ton shell :
 
 ```bash
 # Ajouter cette ligne a ~/.zshrc
-echo '[ -f "$HOME/stfu-os/.env" ] && { set -a; source "$HOME/stfu-os/.env"; set +a; }' >> ~/.zshrc
+echo '[ -f "$HOME/stfu-workspace/.env" ] && { set -a; source "$HOME/stfu-workspace/.env"; set +a; }' >> ~/.zshrc
 
 # Recharger
 source ~/.zshrc
@@ -49,7 +49,7 @@ echo $GOOGLE_USER_EMAIL         # doit afficher ton email
 ## 3. Premiere authentification
 
 ```bash
-cd ~/stfu-os && claude
+cd ~/stfu-workspace && claude --plugin-dir ~/stfu-os
 ```
 
 1. Taper `/mcp` dans Claude Code — verifier que `google-workspace` apparait comme connecte

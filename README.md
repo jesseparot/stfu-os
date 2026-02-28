@@ -1,89 +1,116 @@
-# STFU - Start The F*** Up
+# stfu-os — Plugin Claude Code
 
-Studio d'innovation - Workspace AI-augmented
+Plugin Claude Code pour **Start The F*** Up**, studio de conseil en innovation.
 
-## Structure
+Fournit les skills, conventions, MCP et workflows du studio.
 
-```
-stfu-os/
-├── .claude/                 # Instructions Claude et skills
-│   ├── CLAUDE.md
-│   └── skills/
-│
-├── tuto/                    # Guides partenaires
-│   └── secrets-setup.md
-│
-├── .mcp.json                # Config MCP (secrets via ${VAR})
-├── .env.example             # Template des secrets
-├── .gitignore               # Exclut _workspace/, .env, binaires
-│
-├── conventions.md           # Regles de nommage et structure
-├── glossary.md              # Noms propres
-├── stfu-context.md          # Contexte entreprise
-│
-└── _workspace/              # Travail local (GITIGNORED)
-    ├── projects/            # Projets actifs (flat)
-    ├── sales/               # Pipeline commercial
-    │   ├── appels-d-offres/
-    │   ├── leads/
-    │   └── outbound/
-    ├── templates/           # Structures reutilisables (migration Slite)
-    ├── methodologies/       # Process, frameworks (migration Slite)
-    ├── internal/            # Docs strategie OS
-    ├── _inbox/              # Zone de depot
-    └── _archive/            # Termine
+## Prerequis
+
+- [Claude Code](https://claude.ai/claude-code) installe
+- Node.js / npx (pour les serveurs MCP)
+- uv / uvx (`brew install uv`) — pour le MCP Google Workspace
+- Gemini CLI (`gemini`) en PATH — pour le skill oracle
+
+## Installation
+
+### Depuis le source (mainteneur)
+
+```bash
+cd ~/stfu-workspace
+claude --plugin-dir ~/stfu-os
 ```
 
-**Tracked (git)** : tool layer — skills, config, conventions, guides partenaires.
-**`_workspace/` (gitignored)** : content layer — tout le travail actif. Migre progressivement vers Slite/Drive.
+### Marketplace (equipe)
 
-## Conventions de nommage
+```bash
+# A venir — pour l'instant utiliser --plugin-dir
+```
 
-Voir `conventions.md` pour le detail. En bref :
+## Setup initial
 
-- **Projets** : `{client}-{sujet}` (ex: `totalenergies-plug-charge`)
-- **Documents draft** : `type-sujet_draft.md`
-- **Documents final** : `type-sujet_final.md`
-- **CR** : `cr-YYYY-MM-DD-sujet.md`
+### 1. Creer le workspace
 
-## Workflows
+```bash
+mkdir -p ~/stfu-workspace/{projects,sales/{appels-d-offres,leads,outbound},internal,templates,methodologies,_inbox,_archive,_pipeline-artefacts,.claude/skills}
+```
 
-### Nouvel appel d'offres
+### 2. Configurer les secrets
 
-1. Deposer le DCE dans `_workspace/_inbox/` ou `_workspace/sales/appels-d-offres/{organisme}-{sujet}-{YY-MM}/`
-2. Lancer `/appel-d-offres` pour generer le brief
-3. Go/no-go note dans le README du dossier
+```bash
+# Copier le template
+cp ~/stfu-os/.env.example ~/stfu-workspace/.env
+# Editer avec vos vraies valeurs
 
-### Nouveau lead
+# Ajouter le sourcing dans ~/.zshrc :
+echo '[ -f "$HOME/stfu-workspace/.env" ] && { set -a; source "$HOME/stfu-workspace/.env"; set +a; }' >> ~/.zshrc
+source ~/.zshrc
+```
 
-1. Creer `_workspace/sales/leads/{entreprise}-{contact}-{sujet}/`
-2. Creer README.md avec infos lead
+Voir `tuto/secrets-setup.md` pour le detail des cles API.
 
-### Lead converti en client
+### 3. Authentification Google
 
-1. Lancer `/project-init` (dossier local, manifest, Slite, Drive)
-2. Archiver le lead
-
-### Fin de mission
-
-1. Capitaliser dans Airtable (via `/mission-airtable`)
-2. Archiver dans `_workspace/_archive/`
+Voir `tuto/google-workspace-mcp-setup.md` pour le guide complet.
 
 ## Skills disponibles
 
-| Skill | Usage |
-|-------|-------|
-| `/project-init` | Initialiser un projet |
-| `/appel-d-offres` | Brief d'un appel d'offres |
-| `/organize-file` | Organiser un fichier de l'inbox |
-| `/debrief` | Debrief reunion depuis Granola |
-| `/mission-to-outbound` | Plan prospection depuis une mission |
-| `/case-study-slide` | Slide case study depuis Airtable |
-| `/list-gen` | Listes de prospection enrichies |
+### Plugin (fournis par stfu-os)
 
-## AI-ready
+| Skill | Commande | Description |
+|-------|----------|-------------|
+| stfu-core | *(auto)* | Instructions fondamentales, contexte, conventions, workflows |
+| stfu-writing | *(auto)* | Regles de style appliquees a tout contenu |
+| methode-beta-gouv | *(auto)* | Methodologie coaching beta.gouv |
+| stfu-drive | *(auto)* | Navigation Google Drive STFU Team |
+| oracle | *(auto)* | Recherche approfondie via Gemini + second avis |
+| mermaid-stfu | *(auto)* | Diagrammes Mermaid brandes |
+| stfu-slides | `/stfu-slides` | Design engine Google Slides |
+| market-research | `/market-research` | Etude de marche et benchmark |
+| appel-d-offres | `/appel-d-offres` | Brief d'appels d'offres |
+| propale | `/propale` | Proposition commerciale |
+| mission-airtable | `/mission-airtable` | Capitalisation mission dans Airtable |
+| mission-to-outbound | `/mission-to-outbound` | Plan de prospection outbound |
+| case-study-slide | `/case-study-slide` | Slide case study depuis Airtable |
+| list-gen | `/list-gen` | Listes de prospects enrichies |
+| sales-nav | *(auto)* | Expert Sales Navigator |
+| lemlist | `/lemlist` | Automation Lemlist |
+| user-test-restitution | `/user-test-restitution` | Restitution tests utilisateurs |
 
-- Chaque dossier projet contient un `README.md` manifest
-- Les conventions sont dans `conventions.md` (source de verite)
-- Les instructions Claude sont dans `.claude/CLAUDE.md`
-- Les secrets sont dans `.env` (gitignored), pas dans `.mcp.json`
+### Workspace (dans ~/stfu-workspace/.claude/skills/)
+
+| Skill | Commande | Description |
+|-------|----------|-------------|
+| organize-file | `/organize-file` | Organiser les fichiers de l'inbox |
+| project-init | `/project-init` | Initialiser un projet |
+| clean-workspace | `/clean-workspace` | Scan et nettoyage du workspace |
+
+## Guides
+
+- [Configuration des secrets](tuto/secrets-setup.md)
+- [Google Workspace MCP](tuto/google-workspace-mcp-setup.md)
+- [Setup Claude Code](tuto/claude-code-setup.md)
+
+## Architecture
+
+```
+stfu-os/ (plugin)           stfu-workspace/ (workspace)
+├── .claude-plugin/         ├── .claude/
+│   └── plugin.json         │   ├── CLAUDE.md
+├── skills/                 │   ├── settings.local.json
+│   ├── stfu-core/          │   └── skills/
+│   ├── appel-d-offres/     │       ├── organize-file/
+│   ├── propale/            │       ├── project-init/
+│   ├── stfu-slides/        │       └── clean-workspace/
+│   ├── oracle/             ├── projects/
+│   └── ...                 ├── sales/
+├── settings.json           ├── _inbox/
+├── .mcp.json               ├── _archive/
+├── conventions.md          └── .env
+├── glossary.md
+├── stfu-context.md
+└── tuto/
+```
+
+**Plugin (Git)** = comment on travaille — skills, config, conventions.
+**Workspace (local)** = sur quoi on travaille — projets, sales, livrables.
+**Cloud (Slite, Drive, Airtable)** = source de verite du contenu.

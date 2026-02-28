@@ -17,18 +17,18 @@ cp .env.example .env
 
 # 2. Exporter les variables dans votre shell
 # Ajouter cette ligne à votre ~/.zshrc (ou ~/.bashrc) :
-[ -f "$HOME/stfu-os/.env" ] && { set -a; source "$HOME/stfu-os/.env"; set +a; }
+[ -f "$HOME/stfu-workspace/.env" ] && { set -a; source "$HOME/stfu-workspace/.env"; set +a; }
 
 # 3. Recharger le shell et lancer Claude Code
 source ~/.zshrc
-cd ~/stfu-os && claude
+cd ~/stfu-workspace && claude --plugin-dir ~/stfu-os
 ```
 
 ## Sécurité
 
 ### Protection contre la lecture par Claude
 
-`.claudeignore` ne bloque pas fiablement l'accès aux fichiers secrets. On utilise `permissions.deny` dans `.claude/settings.json` (commité dans le repo) :
+`.claudeignore` ne bloque pas fiablement l'accès aux fichiers secrets. On utilise `permissions.deny` dans `settings.json` (at repo root) (commité dans le repo) :
 
 ```json
 {

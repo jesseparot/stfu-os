@@ -1,6 +1,3 @@
-# Local workspace (all active work)
-_workspace/
-
 # Environment secrets
 .env
 
@@ -15,6 +12,3 @@ node_modules/
 *.pptx
 *.docx
 *.xlsx
-
-# Claude Code local settings
-.claude/settings.local.json
