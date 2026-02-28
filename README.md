@@ -46,9 +46,24 @@ echo '[ -f "$HOME/stfu-workspace/.env" ] && { set -a; source "$HOME/stfu-workspa
 source ~/.zshrc
 ```
 
+### 3. Proteger les fichiers .env
+
+Ajouter ces regles dans `~/stfu-workspace/.claude/settings.json` pour empecher Claude de lire les secrets :
+
+```json
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}
+```
+
 Voir `tuto/secrets-setup.md` pour le detail des cles API.
 
-### 3. Authentification Google
+### 4. Authentification Google
 
 Voir `tuto/google-workspace-mcp-setup.md` pour le guide complet.
 
@@ -103,10 +118,9 @@ stfu-os/ (plugin)           stfu-workspace/ (workspace)
 │   ├── stfu-slides/        │       └── clean-workspace/
 │   ├── oracle/             ├── projects/
 │   └── ...                 ├── sales/
-├── settings.json           ├── _inbox/
-├── .mcp.json               ├── _archive/
-├── conventions.md          └── .env
-├── glossary.md
+├── .mcp.json               ├── _inbox/
+├── conventions.md          ├── _archive/
+├── glossary.md             └── .env
 ├── stfu-context.md
 └── tuto/
 ```
