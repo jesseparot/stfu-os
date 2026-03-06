@@ -41,7 +41,7 @@ Les outils cloud sont les sources de verite pour le contenu, accessibles via MCP
 | Outil | Usage | Utilise par |
 |-------|-------|-------------|
 | **Slite** | Docs internes, methodologies, playbooks | `/debrief`, methode-beta-gouv, reference generale |
-| **Airtable** | Base de missions, references passees, pipeline | `/appel-d-offres` (recherche de missions passees) |
+| **Airtable** | Base de missions, references passees, pipeline | `/analyse-ao` (recherche de missions passees) |
 | **Granola** | Transcripts et notes de reunion | `debrief` (skill user-level) |
 | **Google Drive** | Fichiers clients, livrables, propositions, docs partages | `stfu-drive` (navigation du Drive STFU Team) |
 
@@ -52,7 +52,7 @@ Quand un skill a besoin de methodologie ou de donnees de reference, interroger l
 ### Nouvel appel d'offres
 
 1. Deposer le DCE dans `_inbox/` ou `sales/appels-d-offres/{organisme}-{sujet}-{YY-MM}/`
-2. Lancer `/appel-d-offres` pour generer le brief (recherche de missions de reference dans Airtable)
+2. Lancer `/analyse-ao` pour generer le brief (recherche de missions de reference dans Airtable)
 3. Decision : go/no-go note dans le README
 
 ### Nouveau lead

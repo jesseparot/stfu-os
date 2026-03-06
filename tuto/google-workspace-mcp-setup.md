@@ -7,7 +7,7 @@ Tu n'as **pas** besoin de créer un projet Google Cloud. Les identifiants OAuth 
 ## Prérequis
 
 - Claude Code installé
-- `uv` installé (`brew install uv` sur macOS)
+- `uv` installé (`brew install uv`)
 - Un compte `@stfu.pro` (Google Workspace)
 - Le repo `stfu-os` cloné (`git clone ...` puis `cd stfu-os`)
 

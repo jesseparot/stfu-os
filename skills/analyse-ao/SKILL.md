@@ -1,5 +1,5 @@
 ---
-name: appel-d-offres
+name: analyse-ao
 description: Analyse les appels d'offres pour Start The F*** Up. Extrait les informations clés, vérifie la pertinence par rapport au profil STFU, recherche les missions passées dans Airtable, et crée un brief structuré comme note Slite dans la BDD Appels d'offres. Utiliser pour briefer, résumer, analyser ou examiner un appel d'offres, un marché public ou privé.
 ---
 
@@ -142,7 +142,7 @@ Utiliser `mcp__slite__create-note` pour créer le brief comme note enfant sous "
 **Template du contenu de la note :**
 
 ```markdown
-_Brief généré automatiquement par /appel-d-offres_
+_Brief généré automatiquement par /analyse-ao_
 
 # 1-liner
 

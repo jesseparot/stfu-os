@@ -101,6 +101,7 @@ Voir `tuto/google-workspace-mcp-setup.md` pour le guide complet.
 | sales-nav | *(auto)* | Expert Sales Navigator |
 | lemlist | `/lemlist` | Automation Lemlist |
 | user-test-restitution | `/user-test-restitution` | Restitution tests utilisateurs |
+| setup | `/setup` | Setup initial du workspace |
 
 ### Workspace (dans ~/stfu-workspace/.claude/skills/)
 
