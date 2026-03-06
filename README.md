@@ -20,10 +20,21 @@ cd ~/stfu-workspace
 claude --plugin-dir ~/stfu-os
 ```
 
-### Marketplace (equipe)
+### Equipe
+
+Dans Claude Code :
+
+```
+/plugin marketplace add jesseparot/stfu-os
+/plugin install stfu-os@stfu-os
+```
+
+Puis configurer les secrets — voir `tuto/secrets-setup.md`.
+
+### Alias (optionnel)
 
 ```bash
-# A venir — pour l'instant utiliser --plugin-dir
+alias stfu='cd ~/stfu-workspace && claude --plugin-dir ~/stfu-os'
 ```
 
 ## Setup initial
@@ -81,7 +92,7 @@ Voir `tuto/google-workspace-mcp-setup.md` pour le guide complet.
 | mermaid-stfu | *(auto)* | Diagrammes Mermaid brandes |
 | stfu-slides | `/stfu-slides` | Design engine Google Slides |
 | market-research | `/market-research` | Etude de marche et benchmark |
-| appel-d-offres | `/appel-d-offres` | Brief d'appels d'offres |
+| analyse-ao | `/analyse-ao` | Brief d'appels d'offres |
 | propale | `/propale` | Proposition commerciale |
 | mission-airtable | `/mission-airtable` | Capitalisation mission dans Airtable |
 | mission-to-outbound | `/mission-to-outbound` | Plan de prospection outbound |
@@ -113,7 +124,7 @@ stfu-os/ (plugin)           stfu-workspace/ (workspace)
 │   └── plugin.json         │   ├── CLAUDE.md
 ├── skills/                 │   ├── settings.local.json
 │   ├── stfu-core/          │   └── skills/
-│   ├── appel-d-offres/     │       ├── organize-file/
+│   ├── analyse-ao/     │       ├── organize-file/
 │   ├── propale/            │       ├── project-init/
 │   ├── stfu-slides/        │       └── clean-workspace/
 │   ├── oracle/             ├── projects/

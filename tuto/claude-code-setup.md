@@ -60,18 +60,17 @@ Puis `source ~/.zshrc`.
 ## 3. Configurer stfu-os
 
 ```bash
-cd ~/stfu-os
-
-# Configurer les secrets (cles API, OAuth)
+# Copier le template de secrets dans le workspace
+cp ~/stfu-os/.env.example ~/stfu-workspace/.env
+# Editer ~/stfu-workspace/.env avec tes valeurs
 # Voir tuto/secrets-setup.md pour le guide complet
-cp .env.example .env
-# Editer .env avec tes valeurs
 
 # Ajouter le sourcing auto dans ton shell
-echo '[ -f "$HOME/stfu-os/.env" ] && { set -a; source "$HOME/stfu-os/.env"; set +a; }' >> ~/.zshrc
+echo '[ -f "$HOME/stfu-workspace/.env" ] && { set -a; source "$HOME/stfu-workspace/.env"; set +a; }' >> ~/.zshrc
 source ~/.zshrc
 
-# Lancer Claude Code
+# Lancer Claude Code (marketplace)
+cd ~/stfu-workspace
 claude
 ```
 

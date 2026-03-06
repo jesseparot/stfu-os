@@ -61,7 +61,7 @@ Utiliser `AskUserQuestion` pour recueillir les informations manquantes :
 
 ### Étape 3 — Rechercher les missions passées (Airtable)
 
-Même pattern que `/appel-d-offres` :
+Même pattern que `/analyse-ao` :
 
 **Coordonnées Airtable :**
 - Base ID : `appyJq6jZuil2VMgC`
@@ -86,7 +86,7 @@ Lancer en parallèle :
 | **Slite** | `mcp__slite__search-notes` | Notes internes, CR de meetings, briefs d'AO |
 | **Oracle** (si nouveau client ou secteur inconnu) | Gemini via `gemini` | Recherche company, enjeux sectoriels, actualités récentes |
 
-Email Google : résoudre `$GOOGLE_USER_EMAIL` via Bash. Si non défini, utiliser `jesse@stfu.pro`.
+Email Google : résoudre `$GOOGLE_USER_EMAIL` via Bash. Si non défini, demander à l'utilisateur.
 
 ### Étape 5 — Qualifier le livrable
 
@@ -227,7 +227,7 @@ Si l'utilisateur valide, uploader le draft sur le Drive :
 |---------|-------|-------------|
 | Airtable | Missions passées | Base: `appyJq6jZuil2VMgC`, Table: `tbl5qzd6zlaWBKpqs` |
 | Slite | Notes internes, CR | Recherche via `mcp__slite__search-notes` |
-| Google Drive | Docs client, propales | Email: `$GOOGLE_USER_EMAIL` (ou `jesse@stfu.pro`) |
+| Google Drive | Docs client, propales | Email: `$GOOGLE_USER_EMAIL` (résoudre via Bash) |
 | Granola | Transcripts meetings | `mcp__claude_ai_Granola__query_granola_meetings` |
 | Gemini Oracle | Recherche secteur/client | `gemini -m gemini-2.5-flash -p "..." 2>&1` (timeout 120s) |
 

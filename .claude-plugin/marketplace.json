@@ -1,0 +1,17 @@
+{
+  "name": "stfu-os",
+  "owner": {
+    "name": "STFU",
+    "email": "jesse@stfu.pro"
+  },
+  "metadata": {
+    "description": "Skills, conventions et MCP pour le studio STFU."
+  },
+  "plugins": [
+    {
+      "name": "stfu-os",
+      "source": ".",
+      "description": "Start The F*** Up — skills, conventions et MCP pour le studio d'innovation."
+    }
+  ]
+}
