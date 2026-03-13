@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "stfu-os",
-      "source": ".",
+      "source": "./.",
       "description": "Start The F*** Up — skills, conventions et MCP pour le studio d'innovation."
     }
   ]
