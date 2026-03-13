@@ -10,36 +10,8 @@
   "plugins": [
     {
       "name": "stfu-os",
-      "source": "./",
-      "description": "Start The F*** Up — skills, conventions et MCP pour le studio d'innovation.",
-      "strict": false,
-      "skills": [
-        "./skills/analyse-ao",
-        "./skills/case-study-slide",
-        "./skills/cv-builder",
-        "./skills/cv-propale",
-        "./skills/lemlist",
-        "./skills/list-gen",
-        "./skills/market-research",
-        "./skills/mermaid-stfu",
-        "./skills/methode-beta-gouv",
-        "./skills/mission-airtable",
-        "./skills/mission-to-outbound",
-        "./skills/missions-par-coach",
-        "./skills/oracle",
-        "./skills/propale",
-        "./skills/sales-nav",
-        "./skills/setup",
-        "./skills/stfu-core",
-        "./skills/stfu-drive",
-        "./skills/stfu-slides",
-        "./skills/stfu-writing",
-        "./skills/user-test-restitution",
-        "./skills/workshop-debrief"
-      ],
-      "agents": [
-        "./agents/mission-scorer.md"
-      ]
+      "source": ".",
+      "description": "Start The F*** Up — skills, conventions et MCP pour le studio d'innovation."
     }
   ]
 }
