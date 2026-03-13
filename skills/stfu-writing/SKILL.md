@@ -1,5 +1,6 @@
 ---
 name: stfu-writing
+user_invocable: false
 description: STFU writing style rules. Apply automatically to all content produced for STFU - client deliverables, internal docs, emails, slides. Enforces direct, no-bullshit tone with simple language. Covers French and English.
 ---
 
@@ -64,9 +65,18 @@ Ne jamais reproduire le style sans accents d'une source (transcription, notes ra
 Les transcriptions audio et les inputs bruts contiennent souvent des erreurs sur les noms propres (personnes, clients, partenaires, produits). Toujours vérifier l'orthographe dans `glossary.md` à la racine du workspace STFU avant de livrer.
 
 - ❌ "Flacco a présenté les résultats" (erreur de transcription)
-- ✅ "Flakko a présenté les résultats" (vérifié dans le glossaire)
+- ✅ "Flako a présenté les résultats" (vérifié dans le glossaire)
 
 Si un nom propre n'est pas dans le glossaire et que le doute existe, signaler à l'utilisateur plutôt que de deviner.
+
+### 6. Échapper les astérisques dans le nom STFU
+
+En Markdown, `F***` à l'intérieur de `**bold**` casse le formatage (les `*` sont interprétés comme balises bold/italic). Toujours échapper : `F\*\*\*`.
+
+- ❌ `**Start The F*** Up**` (parsé comme bold incomplet)
+- ✅ `**Start The F\*\*\* Up**` (rendu correct)
+
+Hors contexte bold, `F***` ne pose pas de problème, mais échapper par défaut est plus safe.
 
 ---
 

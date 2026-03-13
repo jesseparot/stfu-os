@@ -1,6 +1,6 @@
 # stfu-os — Plugin Claude Code
 
-Plugin Claude Code pour **Start The F*** Up**, studio de conseil en innovation.
+Plugin Claude Code pour **Start The F\*\*\* Up**, studio de conseil en innovation.
 
 Fournit les skills, conventions, MCP et workflows du studio.
 

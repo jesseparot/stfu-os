@@ -57,7 +57,22 @@ export PATH="$(npm config get prefix)/bin:$PATH"
 
 Puis `source ~/.zshrc`.
 
-## 3. Configurer stfu-os
+## 3. Installer Playwright
+
+Playwright permet a Claude Code de prendre des screenshots, tester des pages web et interagir avec des sites.
+
+```bash
+npm install -g playwright
+playwright install chromium
+```
+
+Verifier :
+
+```bash
+playwright --version
+```
+
+## 4. Configurer stfu-os
 
 ```bash
 # Copier le template de secrets dans le workspace
@@ -74,7 +89,7 @@ cd ~/stfu-workspace
 claude
 ```
 
-## 4. Utilisation dans Cursor
+## 5. Utilisation dans Cursor
 
 Claude Code s'integre dans le terminal de Cursor. Si le terminal Cursor n'est pas en zsh :
 

@@ -1,5 +1,6 @@
 ---
 name: stfu-core
+user_invocable: false
 description: >
   Instructions fondamentales du studio STFU. Charge automatiquement le contexte entreprise,
   les conventions, le glossaire, la philosophie du consultant augmenté, le ton, les sources MCP,
@@ -9,7 +10,7 @@ description: >
 
 # STFU Core
 
-Instructions fondamentales pour le studio **Start The F*** Up (STFU)**, studio de conseil en innovation.
+Instructions fondamentales pour le studio **Start The F\*\*\* Up (STFU)**, studio de conseil en innovation.
 
 Au demarrage, charger les fichiers de reference depuis le plugin :
 - `${CLAUDE_PLUGIN_ROOT}/stfu-context.md` — contexte entreprise complet

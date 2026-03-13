@@ -32,6 +32,7 @@ Verifier chaque outil avec `command -v` :
 | npx | `command -v npx` | (installe avec node) |
 | uv/uvx | `command -v uvx` | `brew install uv` |
 | git | `command -v git` | `xcode-select --install` |
+| Playwright | `command -v playwright` | `npm install -g playwright && playwright install chromium` |
 
 Pour chaque outil manquant :
 1. Informer l'utilisateur : "X n'est pas installe. Je peux l'installer pour toi."
@@ -128,7 +129,7 @@ Afficher un resume sous forme de checklist :
 ```
 Setup termine.
 
-- [x] Dependances : brew, node, npx, uvx, git
+- [x] Dependances : brew, node, npx, uvx, git, playwright
 - [x] Structure workspace creee
 - [x] .env copie (ou deja present)
 - [x] CLAUDE.md cree (ou deja present)

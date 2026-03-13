@@ -2,7 +2,7 @@
 
 ## À propos
 
-**Start The F*** Up (STFU)** (raison sociale : Le Bootcamp) est un studio d'innovation opéré par un commando d'anciens entrepreneurs. Nous aidons les grandes organisations à identifier des opportunités, valider des marchés, concevoir des produits, accélérer leur go‑to‑market et industrialiser des solutions — avec une exigence business-first et une exécution bout‑en‑bout, de la première idée au déploiement.
+**Start The F\*\*\* Up (STFU)** (raison sociale : Le Bootcamp) est un studio d'innovation opéré par un commando d'anciens entrepreneurs. Nous aidons les grandes organisations à identifier des opportunités, valider des marchés, concevoir des produits, accélérer leur go‑to‑market et industrialiser des solutions — avec une exigence business-first et une exécution bout‑en‑bout, de la première idée au déploiement.
 
 ## Positionnement
 
@@ -154,6 +154,42 @@ Dans la lignée de notre nom "Start The F*** Up", nous cultivons :
 - Une posture de "doers" plus que de théoriciens
 - Une culture du passage à l'action ("just start!")
 - Une exigence business-first avec des résultats mesurables
+
+## Groupe GAC (depuis janvier 2026)
+
+STFU (Le Bootcamp SAS) a été racheté par **Global Approach Consulting (GAC)**, groupe de conseil de +250 personnes. Ce rachat impacte plusieurs dimensions administratives et juridiques.
+
+### Représentant légal
+
+Les cofondateurs (David Baruchel, David Flak, Mickaël Coenca) **ne sont plus représentants légaux**. Le représentant légal est :
+
+> **Christophe BOYTCHEV**, Président Directeur Général de Global Approach Consulting Group
+
+Formulation type pour les documents officiels :
+- Représentant Légal de LE BOOTCAMP : SOCIETE GLOBAL APPROACH CONSULTING, elle-même représentée par Christophe BOYTCHEV, Président Directeur Général
+
+Pour qu'un cofondateur signe au nom de STFU, il faut **un document de délégation de signature** émis par GAC.
+
+### Statut juridique : PME → ETI
+
+STFU fait partie d'un groupe de +250 personnes → **plus considéré comme PME** au sens du droit européen. Probablement classé **ETI** (Entreprise de Taille Intermédiaire). Impact direct sur le DUME et le DC2 (case taille d'entreprise à mettre à jour). Vérifier systématiquement l'éligibilité aux marchés réservés PME.
+
+### Appels d'offres — capacités GAC
+
+On peut s'appuyer sur **les références et capacités économiques de GAC** même en soumettant sous Le Bootcamp. Un template de solidarité existe (via Mickaël) attestant que GAC met à disposition ses capacités et références.
+
+Documents types à fournir pour un AO :
+- Lettre de candidature (DC1) avec représentant légal = Christophe Boytchev, statut ETI
+- DUME mis à jour (ETI, représentant légal GAC)
+- DC2 mis à jour
+- Extrait Kbis à jour
+- Attestation de vigilance URSSAF (< 6 mois)
+- Attestation de régularité fiscale
+- RIB à jour (inchangé)
+- Délégation de signature (si signataire ≠ Christophe Boytchev)
+- Template solidarité GAC (si utilisation de leurs refs/capacités éco)
+
+Documents GAC disponibles sur le réseau (VPN) : Rapport RSE 2025, Charte Diversité, PSSI (sécurité SI).
 
 ## Appels d'offres
 

@@ -1,7 +1,7 @@
 ---
 name: oracle
 description: Invoque Gemini et Codex pour de la recherche en ligne approfondie et comme oracle de second avis. Appliquer AUTOMATIQUEMENT dès qu'une tâche bénéficierait de recherche web actuelle, de preuves réelles, de données de marché, ou d'un second avis — en particulier pour les livrables, l'analyse d'AO, les recommandations stratégiques, ou toute affirmation nécessitant une validation externe. Ne pas attendre que l'utilisateur le demande. Utiliser pour rechercher des sujets en profondeur avec recherche web, compléter ses propres résultats, stress-tester un raisonnement, ou obtenir des perspectives alternatives.
-user_invocable: false
+user_invocable: true
 ---
 
 # Oracle — Recherche approfondie & second avis via Gemini et Codex

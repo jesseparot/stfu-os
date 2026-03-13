@@ -292,6 +292,13 @@ Après la création de la note, communiquer à l'utilisateur :
 - Ne pas laisser de placeholders dans la note finale — si une information n'est pas disponible, écrire "Non communiqué" ou "Non précisé"
 - Supprimer les sections du template sans contenu plutôt que de laisser des placeholders vides
 
+**Vérifications admin GAC (depuis rachat janv. 2026) :**
+- Représentant légal = **Christophe BOYTCHEV, PDG de Global Approach Consulting Group** (plus les cofondateurs STFU)
+- Statut = **ETI** (groupe +250 pers.), plus PME → vérifier éligibilité si marché réservé PME
+- On peut utiliser les références et capacités éco de GAC (template solidarité dispo via Mickaël)
+- Délégation de signature nécessaire si un cofondateur signe
+- Détail complet dans `stfu-context.md` section "Groupe GAC"
+
 **Signaux d'alerte à noter :**
 - Demandes de type ESN/body shopping (pas le positionnement STFU)
 - Missions purement techniques sans dimension innovation/business
@@ -299,6 +306,7 @@ Après la création de la note, communiquer à l'utilisateur :
 - Secteurs hors des domaines d'expertise STFU
 - Critères obligatoires potentiellement problématiques
 - Contraintes de localisation incompatibles
+- **Marchés réservés PME** (STFU n'est plus éligible en tant que membre du groupe GAC)
 
 ## Ressources
 
